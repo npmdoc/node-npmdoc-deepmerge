@@ -1,0 +1,120 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/KyleAMathews/deepmerge">deepmerge (v1.3.2)</a>
+</h1>
+<h4>A library for deep (recursive) merging of Javascript objects</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.deepmerge">module deepmerge</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deepmerge.all">
+            function <span class="apidocSignatureSpan">deepmerge.</span>all
+            <span class="apidocSignatureSpan">(array, optionsArgument)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.deepmerge" id="apidoc.module.deepmerge">module deepmerge</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.deepmerge.all" id="apidoc.element.deepmerge.all">
+        function <span class="apidocSignatureSpan">deepmerge.</span>all
+        <span class="apidocSignatureSpan">(array, optionsArgument)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deepmergeAll(array, optionsArgument) {
+    if (!Array.isArray(array) || array.length &lt; 2) {
+        throw new Error('first argument should be an array with at least two elements')
+    }
+
+    // we are sure there are at least 2 values, so it is safe to have no initial value
+    return array.reduce(function(prev, next) {
+        return deepmerge(prev, next, optionsArgument)
+    })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+elements from both `x` and `y`.
+
+If an element at the same key is present for both `x` and `y`, the value from
+`y` will appear in the result.
+
+Merging creates a new object, so that neither `x` or `y` are be modified.  However, child objects on `x` or `y` are copied over -
+if you to copy all values, you must pass `true` to the clone option.
+
+merge.<span class="apidocCodeKeywordSpan">all</span>(arrayOfObjects, [options])
+-----------
+
+Merges two or more objects into a single result object.
+
+```js
+var x = { foo: { bar: 3 } }
+var y = { foo: { baz: 4 } }
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
