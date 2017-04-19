@@ -63,6 +63,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.deepmerge.deepmerge">
+            function <span class="apidocSignatureSpan"></span>deepmerge
+            <span class="apidocSignatureSpan">(target, source, optionsArgument)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.deepmerge.all">
             function <span class="apidocSignatureSpan">deepmerge.</span>all
             <span class="apidocSignatureSpan">(array, optionsArgument)</span>
@@ -76,6 +85,29 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.deepmerge" id="apidoc.module.deepmerge">module deepmerge</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.deepmerge.deepmerge" id="apidoc.element.deepmerge.deepmerge">
+        function <span class="apidocSignatureSpan"></span>deepmerge
+        <span class="apidocSignatureSpan">(target, source, optionsArgument)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deepmerge(target, source, optionsArgument) {
+    var array = Array.isArray(source);
+    var options = optionsArgument || { arrayMerge: defaultArrayMerge }
+    var arrayMerge = options.arrayMerge || defaultArrayMerge
+
+    if (array) {
+        return Array.isArray(target) ? arrayMerge(target, source, optionsArgument) : cloneIfNecessary(source, optionsArgument)
+    } else {
+        return mergeObject(target, source, optionsArgument)
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
